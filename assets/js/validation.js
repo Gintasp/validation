@@ -1,19 +1,19 @@
 const axios = require('axios');
 
 let name = document.getElementById('name');
-let validationResult = document.getElementById('validation-result');
+let validationResult1 = document.getElementById('validation-result1');
 const validateName = function () {
-    validationResult.innerText = '...';
-    axios.post(validationResult.dataset.path, {input: name.value})
+    validationResult1.innerText = '...';
+    axios.post(validationResult1.dataset.path, {input: name.value})
         .then(function(response) {
             if (response.data.valid) {
-                validationResult.innerHTML = ":)";
+                validationResult1.innerHTML = ":)";
             } else {
-                validationResult.innerHTML = ":(";
+                validationResult1.innerHTML = ":(";
             }
         })
         .catch(function (error) {
-            validationResult.innerText = 'Error: ' + error;
+            validationResult1.innerText = 'Error: ' + error;
         });
 };
 
