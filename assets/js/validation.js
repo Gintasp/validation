@@ -4,7 +4,6 @@ const validate = function (el) {
     el.innerText = '...';
     axios.post(el.dataset.path, {team: team.value, input: name.value})
         .then(function (response) {
-            console.log(response.data);
             if (response.data.valid) {
                 el.innerHTML = ":)";
             } else {
